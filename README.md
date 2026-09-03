@@ -1,4 +1,4 @@
-# When Does Pre-Training Pay Off? Architecture versus Self-Supervised Learning for Business Process Predictions
+# When Does Pre-Training Pay Off? Architecture versus Non-Contrastive Self-Supervised Learning for Business Process Predictions
  
 <p align="center">
   <img src="./overview.png" height="250"/>
@@ -10,7 +10,7 @@ This repository contains the implementation, preprocessing, and evaluation code 
  
 <details>
   <summary>Abstract</summary>
-  Organizations increasingly turn event log data into predictions that guide operational decisions, yet their quality depends on how events are repre-sented. Self-supervised pre-training learns repre-sentations on such structured data, but it is unclear whether gains stem from the training objective or the encoder's architectural inductive bias. We disentangle the two through a controlled ablation comparing Barlow Twins-trained transformer encoders against randomly initialized counterparts, with an ablation isolating the augmentation effect. Frozen embeddings feed LSTM and Transformer models for regression and classification across five real-world datasets. Pre-training rarely beats ran-dom initialization: on most logs the two are within run-to-run variation, and where it helps regression, the gain comes from mix-up and cut-mix augmentation, not the objective, while classification sees no pre-training benefit. The architecture accounts for much of the gain regardless of initialization; therefore, pre-training is best treated as a targeted investment for specific, regression-oriented decisions rather than a default step.
+  Organizations increasingly turn event log data into predictions guiding operational decisions, yet their quality depends on how events are represented. Self-supervised pre-training learns representations on such structured data, but it is unclear whether gains stem from the training objective or the encoder’s architectural inductive bias. We disentangle the two through controlled ablations comparing non-contrastive, augmentation-driven Barlow Twins-trained transformer encoders against randomly initialized counterparts, with an ablation isolating augmentation effects. Frozen embeddings feed LSTM and Transformer models for regression and classification across five real-world datasets. Pre-training rarely beats random initialization: on most logs both are within run-to-run variation, and where it helps regression, the gain comes from mix-up and cut-mix augmentation, not the objective, while classification sees no benefit. The architecture accounts for much of the gain regardless of initialization; therefore, pre-training is best treated as a targeted investment for specific regression tasks rather than a default.
 </details>
 ## Overview
  
